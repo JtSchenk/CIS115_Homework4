@@ -1,7 +1,9 @@
 from random import *
 
 num_sticks = 20 #Start with 20 sticks
-current_player = 2
+current_player = 1
+remove_sticks = 0
+new_sticks = 0
 
 def not_quite_right(num_sticks):
     if((0 <= num_sticks and num_sticks < 20)):
@@ -32,9 +34,18 @@ def take_sticks(current_player, num_sticks):
     num_sticks = num_sticks - remove_sticks
     return num_sticks
 
-#not_quite_right(num_sticks)
-#display_board(num_sticks)
-take_sticks(current_player, num_sticks)
-#def display_summary(player_number, sticks_taken, sticks_added, num_sticks):
+def display_summary(current_player, remove_sticks, new_sticks, num_sticks):
+    print("Player {} took {}, pictsie magic added {} back. There are {} sticks left".format(current_player, remove_sticks, new_sticks, num_sticks))
 
-#def main():
+def main():
+    while(num_sticks != 0):
+        not_quite_right(num_sticks)
+        display_board(num_sticks)
+        take_sticks(current_player, num_sticks)
+        display_summary(current_player, remove_sticks, new_sticks, num_sticks)
+        if(current_player == 1):
+            current_player = 2
+        else:
+            current_player = 1
+
+main()
