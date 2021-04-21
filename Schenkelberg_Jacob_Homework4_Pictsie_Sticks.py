@@ -1,6 +1,6 @@
 from random import *
 
-num_sticks = 20 #Start with 20 sticks
+num_sticks = 14 #Start with 20 sticks
 
 def not_quite_right(num_sticks):
     if((0 <= num_sticks and num_sticks < 20)):
@@ -13,12 +13,19 @@ def not_quite_right(num_sticks):
         else:
             print("No sticks added. {} sticks remain.".format(num_sticks))      
 
-not_quite_right(num_sticks)
 
+#find out a way to keep the line going
 def display_board(num_sticks):
+    for x in range(1, num_sticks+1):
+        print("|", end= " ")
+    for x in range(1, num_sticks+1):
+        print(x, end= " ")
 
-def take_sticks(current_player, num_sticks):
+not_quite_right(num_sticks)
+display_board(num_sticks)
 
-def display_summary(player_number, sticks_taken, sticks_added, num_sticks):
+#def take_sticks(current_player, num_sticks):
 
-def main():
+#def display_summary(player_number, sticks_taken, sticks_added, num_sticks):
+
+#def main():
