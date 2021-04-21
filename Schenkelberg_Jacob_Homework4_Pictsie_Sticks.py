@@ -11,7 +11,14 @@ def not_quite_right(num_sticks):
             num_sticks = new_sticks + num_sticks
             print("{} stick(s) added. {} sticks remain.".format(new_sticks, num_sticks)) 
         else:
-            print("No sticks added. {} sticks remain.".format(num_sticks))        
-
+            print("No sticks added. {} sticks remain.".format(num_sticks))      
 
 not_quite_right(num_sticks)
+
+def display_board(num_sticks):
+
+def take_sticks(current_player, num_sticks):
+
+def display_summary(player_number, sticks_taken, sticks_added, num_sticks):
+
+def main():
