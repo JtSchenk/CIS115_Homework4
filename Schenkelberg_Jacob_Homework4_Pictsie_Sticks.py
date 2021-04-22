@@ -1,10 +1,5 @@
 from random import *
 
-num_sticks = 20 #Start with 20 sticks
-current_player = 1
-remove_sticks = 0
-new_sticks = 0
-
 def not_quite_right(num_sticks):
     if((0 <= num_sticks and num_sticks < 20)):
         random_num = randint(1,10)
@@ -21,12 +16,35 @@ def not_quite_right(num_sticks):
 #find out a way to keep the line going
 def display_board(num_sticks):
     for x in range(1, num_sticks+1):
-        print("|", end= " ")
+        if(x < 10):
+            print("|", end= " ")
+        else:
+            print("| ", end= " ")
+    print()
+    for x in range(1, num_sticks+1):
+        if(x < 10):
+            print("|", end= " ")
+        else:
+            print("| ", end= " ")
+    print()
+    for x in range(1, num_sticks+1):
+        if(x < 10):
+            print("|", end= " ")
+        else:
+            print("| ", end= " ")
+    print()
+    for x in range(1, num_sticks+1):
+        if(x < 10):
+            print("|", end= " ")
+        else:
+            print("| ", end= " ")
+    print()
     for x in range(1, num_sticks+1):
         print(x, end= " ")
 
 
 def take_sticks(current_player, num_sticks):
+    current_player = 1
     remove_sticks = 5 # set so the while loop works.
     while(remove_sticks > 3):
         print("Input a valid number to remove sticks. (1) (2) (3)")
@@ -38,6 +56,10 @@ def display_summary(current_player, remove_sticks, new_sticks, num_sticks):
     print("Player {} took {}, pictsie magic added {} back. There are {} sticks left".format(current_player, remove_sticks, new_sticks, num_sticks))
 
 def main():
+    num_sticks = 14 #Start with 20 sticks
+    current_player = 1
+    remove_sticks = 0
+    new_sticks = 0
     while(num_sticks != 0):
         not_quite_right(num_sticks)
         display_board(num_sticks)
